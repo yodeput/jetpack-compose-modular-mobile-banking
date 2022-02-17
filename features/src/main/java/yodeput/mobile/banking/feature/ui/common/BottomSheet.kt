@@ -151,7 +151,7 @@ fun SheetSendMoney(
                 leadingIcon = {
                     androidx.compose.material3.Text(
                         text = "$",
-                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
+                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onBackground)
                     )
                 },
                 textStyle = MaterialTheme.typography.headlineMedium,
