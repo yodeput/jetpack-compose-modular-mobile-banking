@@ -42,11 +42,13 @@ dependencies {
     implementation(Dependencies.COMPOSE_MATERIAL)
     implementation(Dependencies.COMPOSE_MATERIAL_ICON)
     implementation(Dependencies.COMPOSE_MATERIAL_3)
+    implementation(Dependencies.COMPOSE_UI_TOOLING)
     implementation(Dependencies.COMPOSE_PREVIEW)
     implementation(Dependencies.COMPOSE_CONSTRAIN_LAYOUT)
     implementation(Dependencies.ACTIVITY_COMPOSE)
     implementation(Dependencies.SWIPE_REFRESH)
     implementation(Dependencies.PLACEHOLDER)
+    implementation(Dependencies.SKYDOVES)
     kapt(AnnotationProcessorsDependencies.HILT)
 
     addTestsDependencies()

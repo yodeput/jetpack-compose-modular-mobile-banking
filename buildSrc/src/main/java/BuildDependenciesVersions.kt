@@ -3,8 +3,8 @@
  */
 object BuildDependenciesVersions {
     const val GRADLE_ANDROID = "7.0.3"
-    const val KOTLIN = "1.5.31"
-    const val NAVIGATION = "2.4.0-beta01"
+    const val KOTLIN = "1.6.10"
+    const val NAVIGATION = "2.4.0"
     const val APPCOMPAT = "1.3.1"
     const val MATERIAL = "1.4.0"
     const val LIFECYCLE = "2.4.0"

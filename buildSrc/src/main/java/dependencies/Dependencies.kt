@@ -24,14 +24,17 @@ object Dependencies {
     const val MOSHI_KTX = "com.squareup.moshi:moshi-kotlin:${BuildDependenciesVersions.MOSHI}"
     const val COIL = "io.coil-kt:coil-compose:${BuildDependenciesVersions.COIL}"
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${BuildDependenciesVersions.COROUTINES}"
+
     const val COMPOSE_LIVEDATA = "androidx.compose.runtime:runtime-livedata:${BuildDependenciesVersions.COMPOSE}"
     const val COMPOSE_UI = "androidx.compose.ui:ui:${BuildDependenciesVersions.COMPOSE}"
     const val COMPOSE_CONSTRAIN_LAYOUT = "androidx.constraintlayout:constraintlayout-compose:${BuildDependenciesVersions.CONSTRAIN_LAYOUT}"
     const val COMPOSE_MATERIAL = "androidx.compose.material:material:${BuildDependenciesVersions.COMPOSE}"
     const val COMPOSE_MATERIAL_3 = "androidx.compose.material3:material3:${BuildDependenciesVersions.MATERIAL3}"
     const val COMPOSE_MATERIAL_ICON = "androidx.compose.material:material-icons-extended:${BuildDependenciesVersions.COMPOSE}"
+    const val COMPOSE_UI_TOOLING = "androidx.compose.ui:ui-tooling:${BuildDependenciesVersions.COMPOSE}"
     const val COMPOSE_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${BuildDependenciesVersions.COMPOSE}"
     const val ACTIVITY_COMPOSE = "androidx.activity:activity-compose:${BuildDependenciesVersions.ACTIVITY_COMPOSE}"
+
     const val SKYDOVES = "com.github.skydoves:sandwich:${BuildDependenciesVersions.SKYDOVES}"
 
     const val SWIPE_REFRESH = "com.google.accompanist:accompanist-swiperefresh:${BuildDependenciesVersions.ACCOMPANIST}"
