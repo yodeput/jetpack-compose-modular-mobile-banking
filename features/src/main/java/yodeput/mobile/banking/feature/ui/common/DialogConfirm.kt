@@ -7,7 +7,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.window.DialogProperties
+import yodeput.mobile.banking.common.theme.ComposeTheme
 
 @Composable
 fun DialogConfirm(
@@ -36,4 +38,19 @@ fun DialogConfirm(
             dismissOnClickOutside = false,
         )
     )
+}
+
+@Composable
+@Preview(name = " Light")
+private fun PreviewLight() {
+    ComposeTheme() {
+        DialogConfirm("Title","Dialog Message", {}){}
+    }
+}
+@Composable
+@Preview(name = " Dark")
+private fun PreviewDark() {
+    ComposeTheme(darkTheme = true) {
+        DialogConfirm("Title","Dialog Message", {}){}
+    }
 }

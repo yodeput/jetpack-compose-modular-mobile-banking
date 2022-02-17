@@ -3,6 +3,7 @@ package yodeput.mobile.banking.feature.ui.main.component
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -18,6 +19,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ChainStyle
@@ -26,6 +28,8 @@ import yodeput.mobile.banking.common.theme.*
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.placeholder
 import com.google.accompanist.placeholder.shimmer
+import yodeput.mobile.banking.core.model.User
+import yodeput.mobile.banking.feature.ui.common.UserAvatar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -126,7 +130,9 @@ fun BalanceLayout(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
             shape = RoundedCornerShape(28.dp),
         ) {
-            ConstraintLayout(modifier = Modifier.fillMaxWidth().padding(8.dp)) {
+            ConstraintLayout(modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)) {
                 val (sendMo, separator, payBil) = createRefs()
                 createHorizontalChain(
                     sendMo,
@@ -135,7 +141,8 @@ fun BalanceLayout(
                     chainStyle = ChainStyle.Spread
                 )
                 Card(
-                    modifier = Modifier.padding(0.dp)
+                    modifier = Modifier
+                        .padding(0.dp)
                         .constrainAs(sendMo) {},
                     elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
@@ -147,7 +154,7 @@ fun BalanceLayout(
                             .width(100.dp)
                             .clickable(onClick = sendMoneyPress,
                                 indication = rememberRipple(color = MaterialTheme.colorScheme.primary),
-                                interactionSource =  remember { MutableInteractionSource() })
+                                interactionSource = remember { MutableInteractionSource() })
                     ) {
                         Spacer(Modifier.size(3.dp))
                         Icon(
@@ -181,7 +188,8 @@ fun BalanceLayout(
                         ))
 
                 Card(
-                    modifier = Modifier.padding(0.dp)
+                    modifier = Modifier
+                        .padding(0.dp)
                         .constrainAs(payBil) {},
                     elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
                     containerColor = MaterialTheme.colorScheme.primaryContainer,
@@ -193,7 +201,7 @@ fun BalanceLayout(
                             .width(100.dp)
                             .clickable(onClick = payBillsPress,
                                 indication = rememberRipple(color = MaterialTheme.colorScheme.primary),
-                                interactionSource =  remember { MutableInteractionSource() })
+                                interactionSource = remember { MutableInteractionSource() })
                     ) {
                         Spacer(Modifier.size(3.dp))
                         Icon(
@@ -214,5 +222,28 @@ fun BalanceLayout(
             }
 
         }
+    }
+}
+
+@Composable
+@Preview(name = "BalanceLayout Light")
+private fun UserAvatarPreviewLight() {
+    ComposeTheme() {
+        BalanceLayout(
+            balance = "$120.00.",
+            sendMoneyPress = {},
+            payBillsPress = {},
+        )
+    }
+}
+@Composable
+@Preview(name = "BalanceLayout Dark")
+private fun UserAvatarPreviewDark() {
+    ComposeTheme(darkTheme = true) {
+        BalanceLayout(
+            balance = "$120.00.",
+            sendMoneyPress = {},
+            payBillsPress = {},
+        )
     }
 }

@@ -9,9 +9,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import yodeput.mobile.banking.feature.ui.component.UserAvatarShimmer
 import yodeput.mobile.banking.common.theme.Grey400
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.placeholder
@@ -19,6 +19,7 @@ import com.google.accompanist.placeholder.shimmer
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+@Preview(name = "ProgressScreen")
 fun ProgressScreen() {
     Box(
         contentAlignment = Alignment.Center,
@@ -40,6 +41,7 @@ fun ProgressScreen() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+@Preview(name = "LoadingList")
 fun LoadingList() {
     LazyColumn(modifier = Modifier
         .padding(horizontal = 25.dp, vertical = 10.dp)) {
@@ -54,6 +56,7 @@ fun LoadingList() {
     }
 }
 
+@Preview(name = "LoadingListPayees")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoadingListPayees() {
@@ -103,7 +106,7 @@ fun LoadingListItem(){
                         shape = RoundedCornerShape(4.dp),
                     ),
                     text = "Yogi Dewansyah Putra",
-                    style = typography.labelMedium.copy(fontWeight = FontWeight.Bold)
+                    style = typography.labelSmall.copy(fontWeight = FontWeight.Bold)
                 )
                 Text(modifier = Modifier.padding(top=3.dp).placeholder(
                     visible = true,

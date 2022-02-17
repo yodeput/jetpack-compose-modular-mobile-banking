@@ -31,17 +31,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import yodeput.mobile.banking.common.theme.ComposeTheme
 import yodeput.mobile.banking.feature.list.R
 import yodeput.mobile.banking.feature.ui.auth.LoginFragmentDirections
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun RegisterScreen(
-    navController: NavController,
     clearForm: String,
+    onLoginPress: () -> Unit,
     onRegisterClick: (username: String, password: String) -> Unit
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -274,14 +276,29 @@ fun RegisterScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                TextButton(onClick = {
-                    val dest = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
-                    navController.navigateUp()
-                }) {
+                TextButton(onClick = onLoginPress) {
                     Text(text = stringResource(id = R.string.bt_back_login), color = MaterialTheme.colorScheme.primary)
                 }
             }
             Spacer(Modifier.size(16.dp))
         }
+    }
+}
+
+@Composable
+@Preview(name = " Light")
+private fun PreviewLight() {
+    ComposeTheme() {
+        RegisterScreen("",onLoginPress = {}, onRegisterClick =  { username, password ->
+        })
+    }
+}
+
+@Composable
+@Preview(name = " Dark")
+private fun PreviewDark() {
+    ComposeTheme(darkTheme = true) {
+        RegisterScreen("", onLoginPress = {}, onRegisterClick =  { username, password ->
+        })
     }
 }

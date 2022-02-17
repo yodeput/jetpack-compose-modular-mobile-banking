@@ -14,8 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import yodeput.mobile.banking.feature.ui.component.UserAvatar
-import yodeput.mobile.banking.feature.ui.component.UserAvatarShimmer
+import yodeput.mobile.banking.feature.ui.common.UserAvatar
+import yodeput.mobile.banking.feature.ui.common.UserAvatarShimmer
 import yodeput.mobile.banking.common.util.ViewState
 import yodeput.mobile.banking.core.model.User
 

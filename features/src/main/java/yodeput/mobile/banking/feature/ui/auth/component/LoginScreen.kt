@@ -35,17 +35,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import yodeput.mobile.banking.common.theme.ComposeTheme
 import yodeput.mobile.banking.feature.list.R
 import yodeput.mobile.banking.feature.ui.auth.LoginFragmentDirections
 
 @OptIn(ExperimentalComposeUiApi::class, androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
-    navController: NavController,
     loginPress: (username: String, password: String) -> Unit,
+    registerPress: () -> Unit,
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -227,16 +229,29 @@ fun LoginScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                TextButton(onClick = {
-
-                    val dest =
-                        LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
-                    navController.navigate(dest)
-                }) {
+                TextButton(onClick = registerPress) {
                     Text(text = stringResource(id = R.string.bt_to_register), color = MaterialTheme.colorScheme.primary)
                 }
             }
             Spacer(Modifier.size(16.dp))
         }
+    }
+}
+
+@Composable
+@Preview(name = " Light")
+private fun PreviewLight() {
+    ComposeTheme() {
+        LoginScreen(registerPress = {}, loginPress =  { username, password ->
+        })
+    }
+}
+
+@Composable
+@Preview(name = " Dark")
+private fun PreviewDark() {
+    ComposeTheme(darkTheme = true) {
+        LoginScreen(registerPress = {}, loginPress =  { username, password ->
+        })
     }
 }

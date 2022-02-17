@@ -28,7 +28,9 @@ class RegisterFragment : BaseFragment() {
         val messageDialog = remember { mutableStateOf("") }
 
 
-        RegisterScreen(findNavController(), clearForm.value) { username, password ->
+        RegisterScreen(clearForm.value, onLoginPress = {
+            findNavController().navigateUp()
+        }) { username, password ->
             viewModel.performRegister(username, password)
         }
         when (viewState) {

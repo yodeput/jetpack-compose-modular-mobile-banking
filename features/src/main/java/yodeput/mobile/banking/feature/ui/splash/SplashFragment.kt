@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.CircularProgressIndicator
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavDirections
@@ -30,11 +32,13 @@ import yodeput.mobile.banking.common.util.ViewState
 import yodeput.mobile.banking.core.response.BalanceResponse
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
+import yodeput.mobile.banking.common.theme.ComposeTheme
 import yodeput.mobile.banking.feature.list.R
 
 @AndroidEntryPoint
 class SplashFragment : BaseFragment() {
     private val authModel: AuthViewModel by viewModels()
+
 
     @Composable
     override fun setContent() {
@@ -95,7 +99,7 @@ class SplashFragment : BaseFragment() {
 
         val bg = if (isSystemInDarkTheme()) R.drawable.bg_only_dark else R.drawable.bg_only_light
         val logo = if (isSystemInDarkTheme()) R.drawable.logo_light else R.drawable.logo_app
-        Box( modifier = Modifier.fillMaxSize()) {
+        Box( modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
             Image(
                 painter = painterResource(id = bg),
                 contentDescription = null,
@@ -154,6 +158,31 @@ class SplashFragment : BaseFragment() {
             )
             delay(timer)
             findNavController().navigate(nav)
+        }
+    }
+
+    @Composable
+    @Preview(name = " Light")
+    private fun PreviewLight() {
+        ComposeTheme() {
+            SplashScreen(
+                timer = 1000L,
+                version = "1.0.0",
+                false,
+                ViewState.Loading
+            )
+        }
+    }
+    @Composable
+    @Preview(name = " Dark")
+    private fun PreviewDark() {
+        ComposeTheme(darkTheme = true) {
+            SplashScreen(
+                timer = 1000L,
+                version = "1.0.0",
+                false,
+                ViewState.Loading
+            )
         }
     }
 }

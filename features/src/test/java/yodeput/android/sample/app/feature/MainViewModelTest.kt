@@ -1,13 +1,8 @@
-package yodeput.android.sample.app.feature.list
+package yodeput.android.sample.app.feature
 
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import yodeput.mobile.banking.feature.ui.main.MainViewModel
-import yodeput.mobile.banking.common.util.ViewState
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -16,6 +11,7 @@ import org.mockito.ArgumentMatchers.anyInt
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
+import yodeput.mobile.banking.core.network.AuthService
 
 @ExperimentalCoroutinesApi
 class MainViewModelTest {

@@ -1,11 +1,14 @@
-package yodeput.android.sample.app.feature.list
+package yodeput.android.sample.app.feature
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.*
+import org.junit.Rule
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
+import org.mockito.Mock
 
 @ExperimentalCoroutinesApi
 class TestCoroutineRule : TestRule {

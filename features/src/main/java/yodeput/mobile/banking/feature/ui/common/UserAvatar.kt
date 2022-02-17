@@ -1,4 +1,4 @@
-package yodeput.mobile.banking.feature.ui.component
+package yodeput.mobile.banking.feature.ui.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import yodeput.mobile.banking.common.theme.Grey400
@@ -21,6 +22,8 @@ import yodeput.mobile.banking.core.model.User
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.placeholder
 import com.google.accompanist.placeholder.shimmer
+import yodeput.mobile.banking.common.theme.ComposeTheme
+
 
 
 @Composable
@@ -126,5 +129,25 @@ fun UserAvatarShimmer () {
                     ),
             )
         }
+    }
+}
+
+@Composable
+@Preview(name = " Light")
+private fun PreviewLight() {
+    ComposeTheme() {
+        UserAvatar(
+            user = User.mock()
+        )
+    }
+}
+
+@Composable
+@Preview(name = " Dark")
+private fun PreviewDark() {
+    ComposeTheme(darkTheme = true) {
+        UserAvatar(
+            user = User.mock()
+        )
     }
 }

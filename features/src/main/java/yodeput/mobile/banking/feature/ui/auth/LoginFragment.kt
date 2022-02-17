@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import yodeput.mobile.banking.feature.base.BaseFragment
@@ -11,6 +12,7 @@ import yodeput.mobile.banking.feature.ui.common.ProgressScreen
 import yodeput.mobile.banking.feature.ui.component.DialogMessage
 import yodeput.mobile.banking.common.util.ViewState
 import dagger.hilt.android.AndroidEntryPoint
+import yodeput.mobile.banking.common.theme.ComposeTheme
 import yodeput.mobile.banking.feature.ui.auth.component.LoginScreen
 
 @AndroidEntryPoint
@@ -19,9 +21,14 @@ class LoginFragment : BaseFragment() {
 
     @Composable
     override fun setContent() {
-        LoginScreen(findNavController()) { username, password ->
-            viewModel.performLogin(username, password)
-        }
+        LoginScreen(registerPress = {
+            val dest = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+            findNavController().navigate(dest)
+        },
+            loginPress = { username, password ->
+                viewModel.performLogin(username, password)
+            })
+
         val dialogShow = remember { mutableStateOf(false) }
         val titleDialog = remember { mutableStateOf("") }
         val messageDialog = remember { mutableStateOf("") }
@@ -48,4 +55,7 @@ class LoginFragment : BaseFragment() {
             viewModel._loginState.tryEmit(ViewState.Idle)
         }
     }
+
+
 }
+
