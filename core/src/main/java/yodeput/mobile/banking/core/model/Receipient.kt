@@ -11,4 +11,11 @@ import kotlinx.parcelize.Parcelize
 data class Receipient(
     @Json(name = "accountHolder") val accountHolder: String? = null,
     @Json(name = "accountNo") val accountNo: String? = null
-) : Parcelable
+) : Parcelable {
+    companion object {
+        fun mock() = Receipient(
+            accountNo = "123-456-789",
+            accountHolder = "yodeput",
+        )
+    }
+}

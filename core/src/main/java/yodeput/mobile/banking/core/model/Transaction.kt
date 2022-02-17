@@ -22,4 +22,16 @@ data class Transaction(
     val dateHumanFormated: String get() = DateUtils.dateToString(DateUtils.stringToDateTime(transactionDate!!)!!, DateUtils.DMMMYYYY_FORMAT)!!
 
     val amountFormated: String get() = NumberUtils.currencyFormat(amount!!)
+
+
+    companion object {
+        fun mock() = Transaction(
+            amount = 120.0,
+            description = "payment for rent",
+            receipient = Receipient.mock(),
+            transactionDate = "2022-02-14T13:31:09.749Z",
+            transactionId = "620a599d24cd66f0b2311d60",
+            transactionType = "transfer",
+        )
+    }
 }

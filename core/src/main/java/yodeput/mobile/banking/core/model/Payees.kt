@@ -12,4 +12,12 @@ data class Payees(
     @Json(name = "accountNo") val accountNo: String? = null,
     @Json(name = "id") val id: String? = null,
     @Json(name = "name") val name: String? = null
-) : Parcelable
+) : Parcelable {
+    companion object {
+        fun mock() = Payees(
+            id = "123456",
+            accountNo = "123-456-789",
+            name = "yodeput",
+        )
+    }
+}
