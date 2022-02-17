@@ -145,7 +145,7 @@ private fun ChoiceChipContent(
 ) {
     Surface(
         color = when {
-            selected -> MaterialTheme.colorScheme.primary
+            selected -> MaterialTheme.colorScheme.onPrimaryContainer
             else -> MaterialTheme.colorScheme.primaryContainer
         },
         shape = RoundedCornerShape(28.dp),
@@ -159,7 +159,7 @@ private fun ChoiceChipContent(
                 text = text,
                 style = MaterialTheme.typography.bodyMedium.copy(
                     color = when {
-                        selected -> MaterialTheme.colorScheme.onPrimary
+                        selected -> MaterialTheme.colorScheme.primaryContainer
                         else -> MaterialTheme.colorScheme.onPrimaryContainer
                     }
                 ),
