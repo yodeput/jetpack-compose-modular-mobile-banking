@@ -1,0 +1,20 @@
+<resources>
+    <string name="app">Mobile Baking</string>
+    <string name="retry">Retry</string>
+    <string name="defaultChannel">Bank default channel</string>
+    <string name="notificationDescription">Notifications from Mobile Bangking</string>
+
+    <!--    Button -->
+    <string name="bt_login">Login</string>
+    <string name="bt_register">Register</string>
+    <string name="bt_to_register">Dont have an Account?</string>
+    <string name="bt_back_login">Back to Login</string>
+    <string name="bt_confirm">Comfim</string>
+    <string name="bt_ok">OK</string>
+    <string name="bt_cancel">Cancel</string>
+
+    <!--    Message -->
+    <string name="msg_is_required">## is Required</string>
+    <string name="msg_pwd_not_matching">Password not matching</string>
+    <string name="msg_token_expired">Your session is expired</string>
+</resources>

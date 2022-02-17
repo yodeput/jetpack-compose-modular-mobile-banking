@@ -1,0 +1,5 @@
+rootProject.name = "mobileBanking"
+include ':app'
+include ':common'
+include ':core'
+include ':features'

@@ -1,0 +1,17 @@
+<resources>
+    <attr name="colorRed" format="color" />
+    <attr name="colorOnRed" format="color" />
+    <attr name="colorRedContainer" format="color" />
+    <attr name="colorOnRedContainer" format="color" />
+    <attr name="harmonizeRed" format="boolean" />
+    <attr name="colorPurple" format="color" />
+    <attr name="colorOnPurple" format="color" />
+    <attr name="colorPurpleContainer" format="color" />
+    <attr name="colorOnPurpleContainer" format="color" />
+    <attr name="harmonizePurple" format="boolean" />
+    <attr name="colorBlue" format="color" />
+    <attr name="colorOnBlue" format="color" />
+    <attr name="colorBlueContainer" format="color" />
+    <attr name="colorOnBlueContainer" format="color" />
+    <attr name="harmonizeBlue" format="boolean" />
+</resources>

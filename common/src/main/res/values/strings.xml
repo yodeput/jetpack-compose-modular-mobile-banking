@@ -1,0 +1,3 @@
+<resources>
+    <string name="failed_refresh_msg">Something went wrong</string>
+</resources>

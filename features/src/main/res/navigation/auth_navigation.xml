@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@+id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="yodeput.mobile.banking.feature.ui.splash.SplashFragment"
+        android:label="mainFragment">
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splash_to_main"
+            app:destination="@id/mainFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="yodeput.mobile.banking.feature.ui.auth.LoginFragment"
+        android:label="loginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="yodeput.mobile.banking.feature.ui.auth.RegisterFragment"
+        android:label="registerFragment">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="yodeput.mobile.banking.feature.ui.main.MainFragment"
+        android:label="mainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
