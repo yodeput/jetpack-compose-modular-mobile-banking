@@ -1,12 +1,16 @@
 ![With Light Themes](./image/logo.png)
 # Mobile Banking
-Modular Android architecture which showcase Kotlin, MVVM, Navigation, Hilt, Coroutines, Jetpack compose, Retrofit, Unit test and Kotlin Gradle DSL.
+Android App made by Jetpack Compose Components with Kotlin, MVVM Pattern, Multi Module, Navigation, Hilt, Coroutines, Retrofit and cached data by Room and Kotlin Gradle DSL.
 
 ## Features
+* Single Activity
 * Modular Android App Architecture.
 * MVVM Architecture + Repository design Pattern.
+* Cache api response until refreshed.
 * Jetpack Libraries and Architecture Components.
+* Dynamic colors for Light and Dark Themes.
 * Kotlin Gradle DSL.
+
 
 ## Modules
 
